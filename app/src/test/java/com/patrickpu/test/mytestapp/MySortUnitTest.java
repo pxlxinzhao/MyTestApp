@@ -9,11 +9,17 @@ import static org.junit.Assert.*;
 
 public class MySortUnitTest {
 
-    @Test
-    public void testBubbleSort(){
-        int[] testArray = new int[]{3,8,6,9,2,4};
-        int[] expectedArray = new int[]{2,3,4,6,8,9};
+    int[] testArray = new int[]{3,8,6,9,2,4};
+    int[] expectedArrayAsc = new int[]{2,3,4,6,8,9};
+    int[] expectedArrayDesc = new int[]{9,8,6,4,3,2};
 
-        assertArrayEquals(expectedArray, MySort.bubbleSort(testArray));
+    @Test
+    public void testBubbleSortAsc(){
+        assertArrayEquals(expectedArrayAsc, MySort.bubbleSort(testArray, Key.ASC));
     }
+    @Test
+    public void testBubbleSortDesc(){
+        assertArrayEquals(expectedArrayDesc, MySort.bubbleSort(testArray, Key.DESC));
+    }
+
 }
